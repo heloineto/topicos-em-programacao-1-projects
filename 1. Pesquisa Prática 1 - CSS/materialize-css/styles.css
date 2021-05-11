@@ -22,7 +22,7 @@ button.green {
   height: 45px;
 }
 
-.hero {
+section {
   margin: 0 2rem;
 }
 
@@ -68,4 +68,76 @@ button.green {
 
 .card-content {
   text-align: center;
+}
+
+.card-img {
+  object-fit: cover;
+  height: 18rem;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  width: 100%;
+  text-align: center;
+}
+
+p.section3-p {
+  color: gray;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+ul.images {
+  /* display: flex;
+  flex-direction: row;
+  justify-content: center; */
+
+  display: grid;
+  grid-template-areas: 'img1 img2 img3 img4';
+}
+
+a.img-label {
+  position: absolute;
+  bottom: 0%;
+  left: 0%;
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 100%;
+  color: rgba(0, 0, 0, 0.6);
+  text-align: center;
+  padding: 10px 2rem;
+  font-weight: 500;
+}
+
+li.img-item {
+  position: relative;
+}
+
+img.img-item {
+  object-fit: cover;
+  max-height: 250px;
+  max-width: 250px;
+}
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-left: auto;
+  width: 100%;
+  background-color: white;
+  border-top: 2px solid #4caf50;
+  height: 3rem;
+}
+
+.footer-copyright {
+  margin-bottom: 80px;
+}
+
+a.text-small {
+  color: black;
+  padding-right: 2.5rem;
 }
