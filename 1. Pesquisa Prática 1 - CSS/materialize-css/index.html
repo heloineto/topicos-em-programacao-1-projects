@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1. Pesquisa Prática 1 - CSS - Materialize CSS</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css"
+      integrity="sha512-17AHGe9uFHHt+QaRYieK7bTdMMHBMi8PeWG99Mf/xEcfBLDCn0Gze8Xcx1KoSZxDnv+KnCC+os/vuQ7jrF/nkw=="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="grey darken-1">
+    <main class="container white">
+      <header class="grey lighten-2">
+        <div class="title">
+          <h2>Web-Cliente</h2>
+          <h5>Universidade Tecnológica Federal do Paraná</h5>
+        </div>
+        <form class="search-form">
+          <input id="search" type="search" class="search" required />
+          <button class="waves-effect waves-light btn green">Pesquisar</button>
+        </form>
+        <nav class="white">
+          <div class="nav-wrapper">
+            <ul id="nav-mobile" class="left hide-on-med-and-down">
+              <li class="green"><a href="">Home</a></li>
+              <li><a href="" class="black-text">Blog</a></li>
+              <li><a href="" class="black-text">Produtos</a></li>
+              <li><a href="" class="black-text">Contatos</a></li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+      <section class="hero">
+        <div class="hero-img-wrapper relative">
+          <div class="hero-img-text-wrapper">
+            <div class="hero-img-title hero-img-text">XTH-3000</div>
+            <div class="hero-img-subtitle hero-img-text">
+              As melhores imagens do mercado, direto para você!
+            </div>
+          </div>
+          <div
+            class="hero-img-overlay bg-white bg-opacity-25 w-full h-full"
+          ></div>
+          <img
+            src="https://images.unsplash.com/photo-1606986601547-a4d886b671b2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80"
+            alt="Foto de uma câmera"
+            class="hero-img"
+          />
+        </div>
+      </section>
+      <section>
+        <div class="cards-wrapper flex flex-row justify-between">
+          <div class="row">
+            <div class="col s12 m7">
+              <div class="card">
+                <div class="card-image">
+                  <img
+                    src="https://images.unsplash.com/photo-1485199692108-c3b5069de6a0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
+                  />
+                </div>
+                <div class="card-content">
+                  <span class="card-title"> Lorem Ipsum </span>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicingelit.
+                    Totam error fugit blanditiis mollitiandaelaboriosam saepe!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-wrapper">
+            <div class="p-10">
+              <div class="max-w-sm rounded overflow-hidden shadow-lg">
+                <img
+                  class="w-full object-cover h-52"
+                  src="https://images.unsplash.com/photo-1534957753291-64d667ce2927?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1189&q=80"
+                  alt="Girl"
+                />
+                <div class="px-6 py-4">
+                  <div class="font-bold text-xl mb-2 w-full text-center">
+                    Lorem Ipsum
+                  </div>
+                  <p class="text-gray-700 text-center">
+                    Lorem ipsum dolor sit amet consectetur adipisicingelit.
+                    Totam error fugit blanditiis mollitiandaelaboriosam saepe!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-wrapper">
+            <div class="p-10">
+              <div class="max-w-sm rounded overflow-hidden shadow-lg">
+                <img
+                  class="w-full object-cover h-52"
+                  src="https://images.unsplash.com/photo-1555363453-81c835456fff?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+                  alt="Girl"
+                />
+                <div class="px-6 py-4">
+                  <div class="font-bold text-xl mb-2 w-full text-center">
+                    Lorem Ipsum
+                  </div>
+                  <p class="text-gray-700 text-center">
+                    Lorem ipsum dolor sit amet consectetur adipisicingelit.
+                    Totam error fugit blanditiis mollitiandaelaboriosam saepe!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="hero mx-8">
+        <div class="font-bold text-3xl mb-2 w-full text-center">
+          Trabalhos Recentes
+        </div>
+        <p class="text-gray-700 text-center mb-6">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam error
+          fugit blanditiis mollitiandae laboriosam saepe!
+        </p>
+
+        <ul class="flex flex-row justify-center">
+          <li class="relative block group">
+            <img
+              src="https://picsum.photos/300/300"
+              width="300"
+              height="300"
+              class="object-cover pointer-events-none group-hover:opacity-75"
+            />
+            <a
+              class="
+                absolute
+                bottom-0
+                bg-white bg-opacity-50
+                w-full
+                text-center text-gray-700
+                py-4
+              "
+            >
+              Imagem 1
+            </a>
+          </li>
+          <li class="relative block group">
+            <img
+              src="https://picsum.photos/400/400"
+              width="300"
+              height="300"
+              class="object-cover pointer-events-none group-hover:opacity-75"
+            />
+            <a
+              class="
+                absolute
+                bottom-0
+                bg-white bg-opacity-50
+                w-full
+                text-center text-gray-700
+                py-4
+              "
+            >
+              Imagem 2
+            </a>
+          </li>
+          <li class="relative block group">
+            <img
+              src="https://picsum.photos/500/500"
+              width="300"
+              height="300"
+              class="object-cover pointer-events-none group-hover:opacity-75"
+            />
+            <a
+              class="
+                absolute
+                bottom-0
+                bg-white bg-opacity-50
+                w-full
+                text-center text-gray-700
+                py-4
+              "
+            >
+              Imagem 3
+            </a>
+          </li>
+          <li class="relative block group">
+            <img
+              src="https://picsum.photos/600/600"
+              width="300"
+              height="300"
+              class="object-cover pointer-events-none group-hover:opacity-75"
+            />
+            <a
+              class="
+                absolute
+                bottom-0
+                bg-white bg-opacity-50
+                w-full
+                text-center text-gray-700
+                py-4
+              "
+            >
+              Imagem 4
+            </a>
+          </li>
+        </ul>
+      </section>
+      <footer class="container mx-auto pt-8 pb-4 mt-16">
+        <div class="footer-wrapper flex flex-row px-12 py-6 bg-blue-900">
+          <div class="footer-column-1 w-full pb-6 mx-12">
+            <h4
+              class="text-white text-2xl pb-1 border-b-2 border-green-400 flex"
+            >
+              Categorias
+              <div class="pr-6"></div>
+            </h4>
+            <ul class="">
+              <li class="leading-7">
+                <a
+                  class="
+                    text-white text-small
+                    pb-1
+                    border-b-2 border-gray-600
+                    inline-block
+                    w-full
+                  "
+                  href=""
+                >
+                  Categoria 1
+                </a>
+              </li>
+              <li class="leading-7">
+                <a
+                  class="
+                    text-white text-small
+                    pb-1
+                    border-b-2 border-gray-600
+                    inline-block
+                    w-full
+                  "
+                  href=""
+                >
+                  Categoria 2
+                </a>
+              </li>
+              <li class="leading-7">
+                <a
+                  class="
+                    text-white text-small
+                    pb-1
+                    border-b-2 border-gray-600
+                    inline-block
+                    w-full
+                  "
+                  href=""
+                >
+                  Categoria 3
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer-column-1 w-full pb-6 mx-12">
+            <h4
+              class="text-white text-2xl pb-1 border-b-2 border-green-400 flex"
+            >
+              Posts Recentes
+              <div class="pr-6"></div>
+            </h4>
+            <ul class="">
+              <li class="leading-7">
+                <a
+                  class="
+                    text-white text-small
+                    pb-1
+                    border-b-2 border-gray-600
+                    inline-block
+                    w-full
+                  "
+                  href=""
+                >
+                  Lorem Ipsum
+                </a>
+              </li>
+              <li class="leading-7">
+                <a
+                  class="
+                    text-white text-small
+                    pb-1
+                    border-b-2 border-gray-600
+                    inline-block
+                    w-full
+                  "
+                  href=""
+                >
+                  Lorem Ipsum
+                </a>
+              </li>
+              <li class="leading-7">
+                <a
+                  class="
+                    text-white text-small
+                    pb-1
+                    border-b-2 border-gray-600
+                    inline-block
+                    w-full
+                  "
+                  href=""
+                >
+                  Lorem Ipsum
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer-column-1 w-full pb-6 mx-12">
+            <h4
+              class="text-white text-2xl pb-1 border-b-2 border-green-400 flex"
+            >
+              Contatos
+              <div class="pr-6"></div>
+            </h4>
+            <ul class="">
+              <li class="leading-7">
+                <a
+                  class="
+                    text-white text-small
+                    pb-1
+                    border-b-2 border-gray-600
+                    inline-block
+                    w-full
+                  "
+                  href=""
+                >
+                  Informação 1
+                </a>
+              </li>
+              <li class="leading-7">
+                <a
+                  class="
+                    text-white text-small
+                    pb-1
+                    border-b-2 border-gray-600
+                    inline-block
+                    w-full
+                  "
+                  href=""
+                >
+                  Informação 2
+                </a>
+              </li>
+              <li class="leading-7">
+                <a
+                  class="
+                    text-white text-small
+                    pb-1
+                    border-b-2 border-gray-600
+                    inline-block
+                    w-full
+                  "
+                  href=""
+                >
+                  Informação 3
+                </a>
+              </li>
+              <li class="leading-7">
+                <a
+                  class="
+                    text-white text-small
+                    pb-1
+                    border-b-2 border-gray-600
+                    inline-block
+                    w-full
+                  "
+                  href=""
+                >
+                  Informação 4
+                </a>
+              </li>
+              <li class="leading-7">
+                <a
+                  class="
+                    text-white text-small
+                    pb-1
+                    border-b-2 border-gray-600
+                    inline-block
+                    w-full
+                  "
+                  href=""
+                >
+                  Informação 5
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <ul
+          class="
+            footer-bottom
+            bg-white
+            text-gray-700
+            border-t-2 border-green-400
+            flex
+            justify-end
+            pr-10
+            pt-4
+          "
+        >
+          <li class="">
+            <a class="text-small mr-6" href="">Blog</a>
+          </li>
+          <li class="">
+            <a class="text-small mr-6" href="">Suporte</a>
+          </li>
+          <li class="">
+            <a class="text-small mr-6" href="">Contatos</a>
+          </li>
+        </ul>
+      </footer>
+    </main>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"
+      integrity="sha512-E9vR5BfN3bwSc45BWl95328hvOcBYjMzKAKgdNM59yQXpTC4glztZyVoFJRp5qPc5A95zUZ8D5N7kEwUtJ9f6w=="
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
