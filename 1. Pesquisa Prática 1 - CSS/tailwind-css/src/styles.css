@@ -1,3 +1,13 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+@layer components {
+  .navlink {
+    @apply text-black hover:bg-green-700 hover:text-white px-3 py-2 font-medium;
+  }
+}
+
+.hero-img-wrapper {
+  height: 35rem;
+}

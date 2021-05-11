@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1. Pesquisa Prática 1 - CSS - Tailwind CSS</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="bg-gray-300">
+    <main class="mx-24 my-6 bg-white bg-white shadow-lg rounded-lg">
+      <header
+        class="bg-gray-200 pt-4 px-8 border-t-2 border-green-400 relative"
+      >
+        <div class="title mb-12">
+          <h1 class="text-4xl">Web-Cliente</h1>
+          <h6 class="text-1xl">Universidade Tecnológica Federal do Paraná</h6>
+        </div>
+        <form action="" class="absolute top-0 right-0 mr-8 mt-4">
+          <input type="text" class="p-2" />
+          <button class="text-white p-2 bg-green-400">Pesquisar</button>
+        </form>
+        <nav class="bg-white flex items-center">
+          <a href="/home/" class="bg-green-400 text-white px-3 py-3 font-medium"
+            >Home</a
+          >
+          <a
+            href="/blog/"
+            class="
+              text-black
+              hover:bg-green-700
+              hover:text-white
+              px-3
+              py-3
+              font-medium
+            "
+            >Blog</a
+          >
+          <a
+            href="/produtos/"
+            class="
+              text-black
+              hover:bg-green-700
+              hover:text-white
+              px-3
+              py-3
+              font-medium
+            "
+            >Produtos</a
+          >
+          <a
+            href="/contatos/"
+            class="
+              text-black
+              hover:bg-green-700
+              hover:text-white
+              px-3
+              py-3
+              font-medium
+            "
+            >Contatos</a
+          >
+        </nav>
+      </header>
+      <section class="hero mx-8">
+        <div class="hero-img-wrapper relative">
+          <div
+            class="
+              hero-img-text-wrapper
+              z-10
+              absolute
+              bottom-0
+              right-0
+              mb-12
+              mr-12
+              text-white
+              font-medium
+              flex flex-col
+              items-end
+            "
+          >
+            <div class="hero-img-title bg-green-400 mb-3 w-max p-3">
+              XTH-3000
+            </div>
+            <div class="hero-img-subtitle bg-black bg-opacity-50 w-max p-3">
+              As melhores imagens do mercado, direto para você!
+            </div>
+          </div>
+          <div
+            class="
+              hero-img-overlay
+              bg-white bg-opacity-25
+              w-full
+              h-full
+              absolute
+            "
+          ></div>
+          <img
+            src="https://images.unsplash.com/photo-1606986601547-a4d886b671b2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80"
+            alt="Foto de uma câmera"
+            class="hero-img object-cover w-full h-full"
+          />
+        </div>
+      </section>
+      <section>
+        <div class="cards-wrapper flex flex-row">
+          <div class="card-wrapper">
+            <div class="p-10">
+              <div class="max-w-sm rounded overflow-hidden shadow-lg">
+                <img
+                  class="w-full object-cover h-52"
+                  src="https://images.unsplash.com/photo-1485199692108-c3b5069de6a0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
+                  alt="Girl"
+                />
+                <div class="px-6 py-4">
+                  <div class="font-bold text-xl mb-2 w-full text-center">
+                    Lorem Ipsum
+                  </div>
+                  <p class="text-gray-700 text-center">
+                    Lorem ipsum dolor sit amet consectetur adipisicingelit.
+                    Totam error fugit blanditiis mollitiandaelaboriosam saepe!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-wrapper">
+            <div class="p-10">
+              <div class="max-w-sm rounded overflow-hidden shadow-lg">
+                <img
+                  class="w-full object-cover h-52"
+                  src="https://images.unsplash.com/photo-1534957753291-64d667ce2927?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1189&q=80"
+                  alt="Girl"
+                />
+                <div class="px-6 py-4">
+                  <div class="font-bold text-xl mb-2 w-full text-center">
+                    Lorem Ipsum
+                  </div>
+                  <p class="text-gray-700 text-center">
+                    Lorem ipsum dolor sit amet consectetur adipisicingelit.
+                    Totam error fugit blanditiis mollitiandaelaboriosam saepe!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-wrapper">
+            <div class="p-10">
+              <div class="max-w-sm rounded overflow-hidden shadow-lg">
+                <img
+                  class="w-full object-cover h-52"
+                  src="https://images.unsplash.com/photo-1555363453-81c835456fff?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+                  alt="Girl"
+                />
+                <div class="px-6 py-4">
+                  <div class="font-bold text-xl mb-2 w-full text-center">
+                    Lorem Ipsum
+                  </div>
+                  <p class="text-gray-700 text-center">
+                    Lorem ipsum dolor sit amet consectetur adipisicingelit.
+                    Totam error fugit blanditiis mollitiandaelaboriosam saepe!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer></footer>
+    </main>
+  </body>
+</html>
