@@ -1,7 +1,6 @@
 import React, { useMemo } from 'react';
 import { useTable, useSortBy } from 'react-table';
-import MOCK_DATA from './tabela/dados-tabela.json';
-import './tabela/tabela-styles.css';
+import TABLE_DATA from '../../dados-tabela.json';
 import { format } from 'date-fns';
 
 const COLUMNS = [
@@ -56,7 +55,7 @@ const COLUMNS = [
 
 export default function Tabela() {
   const columns = useMemo(() => COLUMNS, []);
-  const data = useMemo(() => MOCK_DATA, []);
+  const data = useMemo(() => TABLE_DATA, []);
 
   const {
     getTableProps,

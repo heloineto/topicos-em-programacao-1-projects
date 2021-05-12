@@ -37,33 +37,17 @@ const ModelPopUp = ({ showModal, setShowModal }) => {
       >
         <animated.div style={animation}>
           <div
-            style={{
-              width: '800px',
-              height: '300px',
-              boxShadow: '0 5px 16px rgba(0, 0, 0, 0.2)',
-              background: '#fff',
-              color: '#000',
-              position: 'relative',
-              zIndex: '10',
-              borderRadius: '10px',
-            }}
+            className="modal-container bg-white rounded shadow-lg z-50 overflow-y-auto w-96"
             showModal={showModal}
           >
-            <div
-              style={{
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                alignItems: 'center',
-                lineHeight: '1.8',
-                color: '#141414',
-              }}
-            >
-              <h1>Exemplo de Modal</h1>
+            <div className="modal-content py-4 text-left px-6">
+              <p class="text-2xl font-bold">Exemplo de Modal</p>
               <p style={{ marginBottom: '1rem' }}>Conteúdo do modal</p>
-              <button className="waves-effect waves-light btn">
-                Butão do modal
-              </button>
+              <div className="grid place-items-center mt-16">
+                <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                  Butão do modal
+                </button>
+              </div>
             </div>
             <MdClose
               style={{
@@ -94,16 +78,9 @@ export default function Modal() {
   const toggleModal = () => setShowModal(!showModal);
 
   return (
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '100vh',
-      }}
-    >
+    <div className="bg-gray-200 flex items-center justify-center h-screen">
       <button
-        className="waves-effect waves-light btn"
+        className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
         onClick={() => toggleModal()}
       >
         Click para ver o Modal

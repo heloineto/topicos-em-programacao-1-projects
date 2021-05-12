@@ -23,79 +23,95 @@ export default function Formulario() {
   };
 
   return (
-    <>
-      <div
-        className="row card"
-        style={{
-          marginTop: '3rem',
-        }}
-      >
-        <div className="input-field col s4">
-          <input
-            value={formValues.email}
-            type="text"
-            onChange={(e) =>
-              setFormValues({
-                ...formValues,
-                email: e.target.value,
-              })
-            }
-          />
-          <label className="active" htmlFor="email">
-            Email
-          </label>
-          <span className="red-text">{formErros.email}</span>
+    <div className="grid place-items-center	bg-gray-300 h-screen">
+      <div className="w-full max-w-xs">
+        <div
+          className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
+          style={{
+            marginTop: '3rem',
+          }}
+        >
+          <div className="mb-4">
+            <label
+              className="block text-gray-700 text-sm font-bold mb-2"
+              htmlFor="email"
+            >
+              Email
+            </label>
+            <input
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              value={formValues.email}
+              type="text"
+              onChange={(e) =>
+                setFormValues({
+                  ...formValues,
+                  email: e.target.value,
+                })
+              }
+            />
+            <span className="text-red-500 text-xs italic">
+              {formErros.email}
+            </span>
+          </div>
+          <div className="mb-4">
+            <label
+              className="block text-gray-700 text-sm font-bold mb-2"
+              htmlFor="cpf"
+            >
+              CPF
+            </label>
+            <input
+              value={formValues.cpf}
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              type="text"
+              onChange={(e) =>
+                setFormValues({
+                  ...formValues,
+                  cpf: e.target.value,
+                })
+              }
+            />
+            <span className="text-red-500 text-xs italic">{formErros.cpf}</span>
+          </div>
+          <div className="mb-4">
+            <label
+              className="block text-gray-700 text-sm font-bold mb-2"
+              htmlFor="date"
+            >
+              Data
+            </label>
+            <input
+              value={formValues.date}
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              type="date"
+              onChange={(e) =>
+                setFormValues({
+                  ...formValues,
+                  date: e.target.value,
+                })
+              }
+            />
+          </div>
+          <button
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            style={{
+              width: '100%',
+            }}
+            onClick={() => validadeFormValues()}
+          >
+            Submeter
+          </button>
         </div>
-        <div className="input-field col s4">
-          <input
-            value={formValues.cpf}
-            type="text"
-            onChange={(e) =>
-              setFormValues({
-                ...formValues,
-                cpf: e.target.value,
-              })
-            }
-          />
-          <label className="active" htmlFor="cpf">
-            CPF
-          </label>
-          <span className="red-text">{formErros.cpf}</span>
-        </div>
-        <div className="input-field col s3">
-          <input
-            value={formValues.date}
-            type="date"
-            onChange={(e) =>
-              setFormValues({
-                ...formValues,
-                date: e.target.value,
-              })
-            }
-          />
-          <label className="active" htmlFor="date">
-            Data
-          </label>
-        </div>
-      </div>
-      <button
-        className="waves-effect waves-light btn"
-        style={{
-          width: '100%',
-        }}
-        onClick={() => validadeFormValues()}
-      >
-        Submeter
-      </button>
 
-      <div style={{ marginTop: '10px' }}>
-        {`
+        <div style={{ marginTop: '10px' }}>
+          {`
         JSON para enviar pro server:\n
         {\n"email":"${formErros.email ? '' : formValues.email}",\n"cpf":"${
-          formErros.cpf ? '' : formValues.cpf
-        }",\n"data":"${formValues.date}" }
+            formErros.cpf ? '' : formValues.cpf
+          }",\n"data":"${formValues.date}" }
         `}
+        </div>
       </div>
-    </>
+    </div>
   );
 }
