@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { useTable, useSortBy } from 'react-table';
-import MOCK_DATA from '../dados-tabela.json';
-import './tabela.css';
+import MOCK_DATA from './dados-tabela.json';
+import './tabela-styles.css';
 import { format } from 'date-fns';
 
 const COLUMNS = [

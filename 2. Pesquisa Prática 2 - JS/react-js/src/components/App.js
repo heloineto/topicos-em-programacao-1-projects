@@ -5,7 +5,7 @@ import CarrosselDeImagens from './CarrosselDeImagens';
 import Formulario from './Formulario';
 import Menu from './Menu';
 import Modal from './Modal';
-import Tabela from './Tabela';
+import Tabela from './tabela/Tabela';
 
 export default class App extends Component {
   render() {
