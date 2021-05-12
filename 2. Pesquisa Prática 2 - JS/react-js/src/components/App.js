@@ -1,5 +1,11 @@
 import { Component } from 'react';
-import { Router, Route, Switch } from 'react-router-dom';
+import { Route, Switch, Router } from 'react-router-dom';
+import history from '../history';
+import CarrosselDeImagens from './CarrosselDeImagens';
+import Formulario from './Formulario';
+import Menu from './Menu';
+import Modal from './Modal';
+import Tabela from './Tabela';
 
 export default class App extends Component {
   render() {
@@ -7,11 +13,10 @@ export default class App extends Component {
       <div className="ui container">
         <Router history={history}>
           <div>
-            <Header />
             <Switch>
               <Route path="/" exact component={Menu} />
               <Route
-                path="/carrosselDeImagens"
+                path="/carrossel-de-imagens"
                 exact
                 component={CarrosselDeImagens}
               />

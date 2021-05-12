@@ -1,45 +1,45 @@
+import { Link } from 'react-router-dom';
+
 const options = [
   {
     name: 'Carrossel de imagens',
-    icon: '',
+    to: '/carrossel-de-imagens',
   },
   {
     name: 'Validação de campos de data, email e cpf em um formulário',
-    icon: '',
+    to: '/formulario',
   },
   {
     name: 'Modal/Dialog',
-    icon: '',
+    to: '/modal',
   },
   {
     name: 'Ordenar campos em uma tabela',
-    icon: '',
+    to: '/tabela',
   },
 ];
 
-export default function () {
+export default function Menu() {
   const renderButtons = () => {
-    return (
-      <button class="btn waves-effect waves-light" type="submit" name="action">
-        Carrossel de imagens
-      </button>
-    );
+    return options.map((option) => {
+      return (
+        <Link
+          to={option.to}
+          href="#!"
+          class="collection-item"
+          key={option.name}
+        >
+          {option.name}
+        </Link>
+      );
+    });
   };
 
   return (
-    <div>
-      <button class="btn waves-effect waves-light" type="submit" name="action">
-        Submit
-        <i class="material-icons right">send</i>
-      </button>
-      <button class="btn waves-effect waves-light" type="submit" name="action">
-        Submit
-        <i class="material-icons right">send</i>
-      </button>
-      <button class="btn waves-effect waves-light" type="submit" name="action">
-        Submit
-        <i class="material-icons right">send</i>
-      </button>
-    </div>
+    <>
+      <h1>React</h1>
+      <h6>Escolha uma opção:</h6>
+      <div class="collection">{renderButtons()}</div>
+    </>
   );
 }
