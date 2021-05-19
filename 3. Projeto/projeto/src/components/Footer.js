@@ -47,10 +47,10 @@ function FooterCol({ name, itemPrefix, nOfItems = 0 }) {
 }
 
 function BottomLinks() {
-  function BottomLink({ innerText }) {
+  function BottomLink({ innerText, to = '' }) {
     return (
       <li>
-        <Link class="text-small mr-6 font-medium" to="">
+        <Link class="text-small mr-6 font-medium" to={to}>
           {innerText}
         </Link>
       </li>
@@ -61,7 +61,7 @@ function BottomLinks() {
     <ul class="footer-bottom bg-white text-gray-700 border-t-2 border-green-400 flex justify-end pr-10 pt-4">
       <BottomLink innerText="Blog" />
       <BottomLink innerText="Suporte" />
-      <BottomLink innerText="Contatos" />
+      <BottomLink innerText="Contato" to="/contato" />
     </ul>
   );
 }
