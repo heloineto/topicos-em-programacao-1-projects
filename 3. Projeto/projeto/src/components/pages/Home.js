@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import ImgSlider from '../ImgSlider';
 
 export default function HomePage() {
@@ -22,11 +23,6 @@ function HeroSection() {
           </div>
         </div>
         <div class="hero-img-overlay bg-white bg-opacity-25 w-full h-full absolute"></div>
-        {/* <img
-          src="imgs/hero.jpg"
-          alt="Foto de uma câmera"
-          class="hero-img object-cover w-full h-full"
-        /> */}
         <ImgSlider />
       </div>
     </section>
@@ -71,6 +67,30 @@ function CardsSection() {
 }
 
 function RecentWorkSection() {
+  const renderItems = () => {
+    return [...Array(4).keys()].map((idx) => {
+      const imgSize = 300 + 100 * idx;
+
+      return (
+        <li key={idx} class="relative block group">
+          <img
+            src={`https://picsum.photos/${imgSize}/${imgSize}`}
+            width="300"
+            height="300"
+            class="object-cover pointer-events-none group-hover:opacity-75"
+            alt=""
+          />
+          <Link
+            class="absolute bottom-0 bg-white bg-opacity-50 w-full text-center text-gray-700 py-4"
+            to=""
+          >
+            {`Imagem ${idx + 1}`}
+          </Link>
+        </li>
+      );
+    });
+  };
+
   return (
     <section class="hero mx-8">
       <div class="font-bold text-3xl mb-2 w-full text-center">
@@ -81,88 +101,7 @@ function RecentWorkSection() {
         fugit blanditiis mollitiandae laboriosam saepe!
       </p>
 
-      <ul class="flex flex-row justify-center">
-        <li class="relative block group">
-          <img
-            src="https://picsum.photos/300/300"
-            width="300"
-            height="300"
-            class="object-cover pointer-events-none group-hover:opacity-75"
-          />
-          <a
-            class="
-          absolute
-          bottom-0
-          bg-white bg-opacity-50
-          w-full
-          text-center text-gray-700
-          py-4
-        "
-          >
-            Imagem 1
-          </a>
-        </li>
-        <li class="relative block group">
-          <img
-            src="https://picsum.photos/400/400"
-            width="300"
-            height="300"
-            class="object-cover pointer-events-none group-hover:opacity-75"
-          />
-          <a
-            class="
-          absolute
-          bottom-0
-          bg-white bg-opacity-50
-          w-full
-          text-center text-gray-700
-          py-4
-        "
-          >
-            Imagem 2
-          </a>
-        </li>
-        <li class="relative block group">
-          <img
-            src="https://picsum.photos/500/500"
-            width="300"
-            height="300"
-            class="object-cover pointer-events-none group-hover:opacity-75"
-          />
-          <a
-            class="
-          absolute
-          bottom-0
-          bg-white bg-opacity-50
-          w-full
-          text-center text-gray-700
-          py-4
-        "
-          >
-            Imagem 3
-          </a>
-        </li>
-        <li class="relative block group">
-          <img
-            src="https://picsum.photos/600/600"
-            width="300"
-            height="300"
-            class="object-cover pointer-events-none group-hover:opacity-75"
-          />
-          <a
-            class="
-          absolute
-          bottom-0
-          bg-white bg-opacity-50
-          w-full
-          text-center text-gray-700
-          py-4
-        "
-          >
-            Imagem 4
-          </a>
-        </li>
-      </ul>
+      <ul class="flex flex-row justify-center">{renderItems()}</ul>
     </section>
   );
 }
