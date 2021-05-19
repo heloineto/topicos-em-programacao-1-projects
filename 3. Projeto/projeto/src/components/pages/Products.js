@@ -14,7 +14,7 @@ class ProductsPage extends Component {
 
   addProductToCart(product) {
     this.props.addToCart(this.props.cart, product);
-    toast.success(`👍 - "${product.title}" Adicionado no carrinho!`, {
+    toast.success(`👍 "${product.title}" Adicionado no carrinho!`, {
       position: 'bottom-right',
       autoClose: 2000,
     });

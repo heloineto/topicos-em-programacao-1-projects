@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { addToCart, removeFromCart } from '../../actions/cartActions';
+import {
+  addToCart,
+  decrementFromCart,
+  removeFromCart,
+} from '../../actions/cartActions';
 import { fetchProducts } from '../../actions/productsActions';
 
 import { ToastContainer, toast } from 'react-toastify';
@@ -10,7 +14,7 @@ import 'react-toastify/dist/ReactToastify.css';
 class ShoppingCartPage extends Component {
   addProductToCart(product) {
     this.props.addToCart(this.props.cart, product);
-    toast.success(`👍 - "${product.title}" Adicionado no carrinho!`, {
+    toast.success(`👍 "${product.title}" Adicionado no carrinho!`, {
       position: 'bottom-right',
       autoClose: 2000,
     });
@@ -18,6 +22,18 @@ class ShoppingCartPage extends Component {
 
   removeProductFromCart(product) {
     this.props.removeFromCart(this.props.cart, product);
+    toast.error(`👍 "${product.title}" Removido do carrinho!`, {
+      position: 'bottom-right',
+      autoClose: 2000,
+    });
+  }
+
+  decrementProductFromCart(product) {
+    this.props.decrementFromCart(this.props.cart, product);
+    toast.warning(`👍 "${product.title}" Decrementado do carrinho!`, {
+      position: 'bottom-right',
+      autoClose: 2000,
+    });
   }
 
   getTotalCost() {
@@ -56,7 +72,7 @@ class ShoppingCartPage extends Component {
             </div>
           </div>
           <div className="flex justify-center w-1/5">
-            <button onClick={''}>
+            <button onClick={() => this.decrementProductFromCart(product)}>
               <svg
                 className="fill-current text-gray-600 w-3"
                 viewBox="0 0 448 512"
@@ -96,7 +112,7 @@ class ShoppingCartPage extends Component {
     return (
       <main className="container mx-auto">
         <div className="flex">
-          <div className="w-3/4 bg-white px-10 py-10">
+          <div className="w-3/4 bg-white px-10 pt-10">
             <div className="flex justify-between border-b pb-8">
               <h1 className="font-semibold text-2xl">Carrinho de Compras</h1>
               <h2 className="font-semibold text-2xl">{`${this.getAmountOfItems()} Itens`}</h2>
@@ -129,21 +145,18 @@ class ShoppingCartPage extends Component {
               Continuar Comprando
             </Link>
           </div>
-          <div id="summary" className="w-1/4 px-8 py-10">
+          <div id="summary" className="w-1/4 px-8 pt-10">
             <h1 className="font-semibold text-2xl border-b pb-8">
-              Order Summary
+              Sumário do Pedido
             </h1>
             <div className="flex justify-between mt-10 mb-5">
               <span className="font-semibold text-sm uppercase">{`Itens ${this.getAmountOfItems()}`}</span>
-              <span className="font-semibold text-sm">
-                {`R$ ${this.getTotalCost()}`}
-              </span>
             </div>
 
             <div className="border-t mt-8">
               <div className="flex font-semibold justify-between py-6 text-sm uppercase">
-                <span>Total cost</span>
-                <span>{this.getTotalCost()}</span>
+                <span>Custo total:</span>
+                <span>{`R$ ${this.getTotalCost()}`}</span>
               </div>
               <button className="bg-indigo-500 font-semibold hover:bg-indigo-600 py-3 text-sm text-white uppercase w-full">
                 Checkout
@@ -164,4 +177,5 @@ export default connect(mapStateToProps, {
   fetchProducts,
   addToCart,
   removeFromCart,
+  decrementFromCart,
 })(ShoppingCartPage);
