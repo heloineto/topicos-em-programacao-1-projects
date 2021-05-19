@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Header from './Header';
 import HomePage from './HomePage';
@@ -24,4 +24,10 @@ export default class App extends Component {
       </div>
     );
   }
+}
+
+function PageWrapper() {
+  return (
+    <main class="mx-24 my-6 bg-white bg-white shadow-lg rounded-lg"></main>
+  );
 }
