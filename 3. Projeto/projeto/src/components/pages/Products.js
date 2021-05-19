@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import { FaCartPlus } from 'react-icons/fa';
 import { connect } from 'react-redux';
+import { addToCart } from '../../actions/cartActions';
 import { fetchProducts } from '../../actions/productsActions';
 
 class ProductsPage extends Component {
@@ -24,7 +25,10 @@ class ProductsPage extends Component {
             }}
           >
             <button className="p-5 rounded-full bg-blue-600 text-white mx-5 -mb-9 hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
-              <FaCartPlus className="h-8 w-8 pr-1" />
+              <FaCartPlus
+                onClick={() => this.props.addToCart(this.props.cart, product)}
+                className="h-8 w-8 pr-1"
+              />
             </button>
           </div>
           <div className="px-5 py-3">
@@ -53,7 +57,9 @@ class ProductsPage extends Component {
 }
 
 const mapStateToProps = (state) => {
-  return { products: state.products.items ?? [] };
+  return { cart: state.cart, products: state.products.items ?? [] };
 };
 
-export default connect(mapStateToProps, { fetchProducts })(ProductsPage);
+export default connect(mapStateToProps, { fetchProducts, addToCart })(
+  ProductsPage
+);

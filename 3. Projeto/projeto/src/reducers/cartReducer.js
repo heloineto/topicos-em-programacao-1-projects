@@ -5,9 +5,9 @@ const INITIAL_STATE = [];
 export default function productsReducer(state = INITIAL_STATE, action) {
   switch (action.type) {
     case ADD_TO_CART:
-      return { cart: action.payload };
+      return action.payload;
     case REMOVE_FROM_CART:
-      return { cart: action.payload };
+      return action.payload;
     default:
       return state;
   }

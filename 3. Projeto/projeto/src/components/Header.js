@@ -11,8 +11,8 @@ export default function Header() {
       <SearchForm />
       <nav className="bg-white flex items-center">
         <NavLink to="/" innerText="Home" isHighlighted></NavLink>
-        <NavLink to="/blog" innerText="Blog"></NavLink>
         <NavLink to="/produtos" innerText="Produtos"></NavLink>
+        <NavLink to="/carrinho" innerText="Carrinho de Compras"></NavLink>
         <NavLink to="/contato" innerText="Contato"></NavLink>
       </nav>
     </header>

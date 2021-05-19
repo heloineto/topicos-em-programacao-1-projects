@@ -1,5 +1,4 @@
 import { ADD_TO_CART, REMOVE_FROM_CART } from './types';
-import { products } from '../data/db.json';
 
 //  [
 //    {
@@ -9,14 +8,14 @@ import { products } from '../data/db.json';
 //  ]
 
 export const addToCart = (cart, newProduct) => (dispatch) => {
-  const newCart = cart.splice();
+  const newCart = cart.slice();
 
   let isAlreadyInCart = false;
 
-  newCart.forEach((product) => {
-    if (product.id === newProduct.id) {
+  newCart.forEach((productRef) => {
+    if (productRef.product.id === newProduct.id) {
       isAlreadyInCart = true;
-      product.amount++;
+      productRef.amount++;
     }
   });
   if (!isAlreadyInCart) {
@@ -25,9 +24,16 @@ export const addToCart = (cart, newProduct) => (dispatch) => {
 
   localStorage.setItem('shoppingCart', JSON.stringify(newCart));
 
+  console.log(newCart);
   return dispatch({ type: ADD_TO_CART, payload: newCart });
 };
 
-export const removeFromCart = () => (dispatch) => {
-  return dispatch({ type: REMOVE_FROM_CART, payload: products });
+export const removeFromCart = (cart, removedProduct) => (dispatch) => {
+  const newCart = cart
+    .slice()
+    .filter((productRef) => productRef.product.id !== removedProduct.id);
+
+  localStorage.setItem('shoppingCart', JSON.stringify(newCart));
+
+  return dispatch({ type: REMOVE_FROM_CART, payload: newCart });
 };
