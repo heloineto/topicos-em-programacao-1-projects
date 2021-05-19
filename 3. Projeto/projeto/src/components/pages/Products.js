@@ -34,11 +34,11 @@ class ProductsPage extends Component {
               backgroundImage: `url("imgs/products/${product.id}.jpg")`,
             }}
           >
-            <button className="p-5 rounded-full bg-blue-600 text-white mx-5 -mb-9 hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
-              <FaCartPlus
-                onClick={() => this.addProductToCart(product)}
-                className="h-8 w-8 pr-1"
-              />
+            <button
+              onClick={() => this.addProductToCart(product)}
+              className="p-5 rounded-full bg-blue-600 text-white mx-5 -mb-9 hover:bg-blue-500 focus:outline-none focus:bg-blue-500"
+            >
+              <FaCartPlus className="h-8 w-8 pr-1" />
             </button>
           </div>
           <div className="px-5 py-3">

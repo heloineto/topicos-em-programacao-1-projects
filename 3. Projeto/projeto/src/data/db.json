@@ -4,37 +4,43 @@
       "id": 0,
       "title": "Success Kid",
       "price": "",
-      "priceBRL": "9,75"
+      "priceBRL": "9,00",
+      "description": "Success kid (also known as \"I hate sandcastles\") became popular in around 2008 when a photo of a smug baby at the beach was used across the web on social media, mainly as personal profile photographs."
     },
     {
       "id": 1,
       "title": "Disaster Girl",
       "price": "a house",
-      "priceBRL": "4,00"
+      "priceBRL": "4,00",
+      "description": "In 2004, a photograph of a young girl with a devilish smile in front of a burning house appeared online. It was picked up four years later by Buzzfeed and soon got the attention of the internet with posts and re-posts all across the web."
     },
     {
       "id": 2,
       "title": "Doge",
       "price": "1.000.000 doge coins (free)",
-      "priceBRL": "5,00"
+      "priceBRL": "5,00",
+      "description": "Originating in the depths of 2010, this meme came to life thanks to some glorious photos of Shiba Inus - a breed of tiny and agile Japanese dog with a quizzical face. Posted on a personal blog, the original photos appeared with one such dog named \"Kabosu\" casually lounging on a sofa with a sideways glance at the camera."
     },
     {
       "id": 3,
       "title": "The Art Of The Deal",
       "price": "a small loan of 1 million dollars",
-      "priceBRL": "10,00"
+      "priceBRL": "10,00",
+      "description": "US President Donald Trump has been the subject of many a meme in the run up to and well into his Presidency."
     },
     {
       "id": 4,
       "title": "Facepalm",
       "price": "priceless",
-      "priceBRL": "8,00"
+      "priceBRL": "8,00",
+      "description": "The classic facepalm is a well-known symbol for dismay at someone's foolish actions – especially where a lapse in judgement or common sense might apply."
     },
     {
       "id": 5,
       "title": "Nokia 3310",
       "price": "",
-      "priceBRL": "2,50"
+      "priceBRL": "2,00",
+      "description": "The classic Nokia 3310 mobile phone has developed somewhat of a legendary status over the years. Originally released in 2000, this phone was a brute of a device; hard-wearing and long-lasting compared to today's fragile phones."
     }
   ]
 }

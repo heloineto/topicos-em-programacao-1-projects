@@ -4,7 +4,9 @@ import {
   REMOVE_FROM_CART,
 } from '../actions/types';
 
-const INITIAL_STATE = [];
+const INITIAL_STATE = localStorage.getItem('shoppingCart')
+  ? JSON.parse(localStorage.getItem('shoppingCart'))
+  : [];
 
 export default function productsReducer(state = INITIAL_STATE, action) {
   switch (action.type) {
