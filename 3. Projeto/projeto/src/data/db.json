@@ -1,0 +1,40 @@
+{
+  "products": [
+    {
+      "id": 0,
+      "title": "Success Kid",
+      "price": "",
+      "priceBRL": "9,75"
+    },
+    {
+      "id": 1,
+      "title": "Disaster Girl",
+      "price": "a house",
+      "priceBRL": "4,00"
+    },
+    {
+      "id": 2,
+      "title": "Doge",
+      "price": "1.000.000 doge coins (free)",
+      "priceBRL": "5,00"
+    },
+    {
+      "id": 3,
+      "title": "The Art Of The Deal",
+      "price": "a small loan of 1 million dollars",
+      "priceBRL": "10,00"
+    },
+    {
+      "id": 4,
+      "title": "Facepalm",
+      "price": "priceless",
+      "priceBRL": "8,00"
+    },
+    {
+      "id": 5,
+      "title": "Nokia 3310",
+      "price": "",
+      "priceBRL": "2,50"
+    }
+  ]
+}
