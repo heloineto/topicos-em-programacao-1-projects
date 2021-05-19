@@ -12,7 +12,7 @@ import ShoppingCart from './pages/ShoppingCart';
 export default class App extends Component {
   render() {
     return (
-      <main class="mx-24 my-6 bg-white bg-white shadow-lg rounded-lg">
+      <main className="mx-24 my-6 bg-white bg-white shadow-lg rounded-lg">
         <BrowserRouter>
           <div>
             <Header />
