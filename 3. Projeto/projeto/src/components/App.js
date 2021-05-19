@@ -5,11 +5,12 @@ import HomePage from './HomePage';
 import ContactPage from './ContactPage';
 import ProductsPage from './ProductsPage';
 import ShoppingCartPage from './ShoppingCartPage';
+import Footer from './Footer';
 
 export default class App extends Component {
   render() {
     return (
-      <div className="ui container">
+      <main class="mx-24 my-6 bg-white bg-white shadow-lg rounded-lg">
         <BrowserRouter>
           <div>
             <Header />
@@ -19,15 +20,10 @@ export default class App extends Component {
               <Route path="/produtos" exact component={ProductsPage} />
               <Route path="/carrinho" exact component={ShoppingCartPage} />
             </Switch>
+            <Footer />
           </div>
         </BrowserRouter>
-      </div>
+      </main>
     );
   }
-}
-
-function PageWrapper() {
-  return (
-    <main class="mx-24 my-6 bg-white bg-white shadow-lg rounded-lg"></main>
-  );
 }
