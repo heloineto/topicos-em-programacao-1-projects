@@ -4,10 +4,20 @@ import { connect } from 'react-redux';
 import { addToCart } from '../../actions/cartActions';
 import { fetchProducts } from '../../actions/productsActions';
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 class ProductsPage extends Component {
   componentDidMount() {
     this.props.fetchProducts();
-    console.log(this.props.products);
+  }
+
+  addProductToCart(product) {
+    this.props.addToCart(this.props.cart, product);
+    toast.success(`👍 - "${product.title}" Adicionado no carrinho!`, {
+      position: 'bottom-right',
+      autoClose: 2000,
+    });
   }
 
   renderProducts() {
@@ -26,14 +36,14 @@ class ProductsPage extends Component {
           >
             <button className="p-5 rounded-full bg-blue-600 text-white mx-5 -mb-9 hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
               <FaCartPlus
-                onClick={() => this.props.addToCart(this.props.cart, product)}
+                onClick={() => this.addProductToCart(product)}
                 className="h-8 w-8 pr-1"
               />
             </button>
           </div>
           <div className="px-5 py-3">
             <h3 className="text-gray-700 font-medium">{product.title}</h3>
-            <span className="text-gray-500 mt-2">R$ {product.priceBRL}</span>
+            <span className="text-gray-500 mt-2">{`R$ ${product.priceBRL}`}</span>
           </div>
         </div>
       );
@@ -51,6 +61,7 @@ class ProductsPage extends Component {
             {this.renderProducts()}
           </div>
         </div>
+        <ToastContainer />
       </main>
     );
   }

@@ -4,9 +4,92 @@ import { Link } from 'react-router-dom';
 import { addToCart, removeFromCart } from '../../actions/cartActions';
 import { fetchProducts } from '../../actions/productsActions';
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 class ShoppingCartPage extends Component {
+  addProductToCart(product) {
+    this.props.addToCart(this.props.cart, product);
+    toast.success(`👍 - "${product.title}" Adicionado no carrinho!`, {
+      position: 'bottom-right',
+      autoClose: 2000,
+    });
+  }
+
+  removeProductFromCart(product) {
+    this.props.removeFromCart(this.props.cart, product);
+  }
+
+  getTotalCost() {
+    let totalCost = 0;
+    this.props.cart.forEach(({ product, amount }) => {
+      totalCost += amount * parseFloat(product.priceBRL);
+    });
+
+    return totalCost;
+  }
+
+  getAmountOfItems() {
+    return this.props.cart.length;
+  }
+
   renderItems() {
-    return <CartItem />;
+    return this.props.cart.map(({ product, amount }) => {
+      return (
+        <div className="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5">
+          <div className="flex w-2/5">
+            <div className="w-20">
+              <img
+                className="h-24"
+                src={`imgs/products/${product.id}.jpg`}
+                alt=""
+              />
+            </div>
+            <div className="flex flex-col justify-between ml-4 flex-grow">
+              <span className="font-bold text-sm">{product.title}</span>
+              <button
+                onClick={() => this.removeProductFromCart(product)}
+                className="font-bold hover:text-red-500 text-gray-500 text-sm"
+              >
+                Remover
+              </button>
+            </div>
+          </div>
+          <div className="flex justify-center w-1/5">
+            <button onClick={''}>
+              <svg
+                className="fill-current text-gray-600 w-3"
+                viewBox="0 0 448 512"
+              >
+                <path d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z" />
+              </svg>
+            </button>
+
+            <input
+              className="mx-2 border text-center w-8"
+              type="text"
+              value={amount}
+            />
+
+            <button onClick={() => this.addProductToCart(product)}>
+              <svg
+                className="fill-current text-gray-600 w-3"
+                viewBox="0 0 448 512"
+              >
+                <path d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z" />
+              </svg>
+            </button>
+          </div>
+          <span className="text-center w-1/5 font-semibold text-sm">
+            {`R$ ${product.priceBRL}`}
+          </span>
+          <span className="text-center w-1/5 font-semibold text-sm">
+            {`R$ ${amount * parseFloat(product.priceBRL)}`}
+          </span>
+          <ToastContainer />
+        </div>
+      );
+    });
   }
 
   render() {
@@ -16,7 +99,7 @@ class ShoppingCartPage extends Component {
           <div className="w-3/4 bg-white px-10 py-10">
             <div className="flex justify-between border-b pb-8">
               <h1 className="font-semibold text-2xl">Carrinho de Compras</h1>
-              <h2 className="font-semibold text-2xl">{`${3} Items`}</h2>
+              <h2 className="font-semibold text-2xl">{`${this.getAmountOfItems()} Itens`}</h2>
             </div>
             <div className="flex mt-10 mb-5">
               <h3 className="font-semibold text-gray-600 text-xs uppercase w-2/5">
@@ -46,101 +129,32 @@ class ShoppingCartPage extends Component {
               Continuar Comprando
             </Link>
           </div>
-          <CartSummary />
+          <div id="summary" className="w-1/4 px-8 py-10">
+            <h1 className="font-semibold text-2xl border-b pb-8">
+              Order Summary
+            </h1>
+            <div className="flex justify-between mt-10 mb-5">
+              <span className="font-semibold text-sm uppercase">{`Itens ${this.getAmountOfItems()}`}</span>
+              <span className="font-semibold text-sm">
+                {`R$ ${this.getTotalCost()}`}
+              </span>
+            </div>
+
+            <div className="border-t mt-8">
+              <div className="flex font-semibold justify-between py-6 text-sm uppercase">
+                <span>Total cost</span>
+                <span>{this.getTotalCost()}</span>
+              </div>
+              <button className="bg-indigo-500 font-semibold hover:bg-indigo-600 py-3 text-sm text-white uppercase w-full">
+                Checkout
+              </button>
+            </div>
+          </div>
         </div>
       </main>
     );
   }
 }
-
-const CartItem = ({
-  igmSrc = '',
-  title = '',
-  priceBRL = 0,
-  priceBRLTotal = 0,
-}) => {
-  return (
-    <div className="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5">
-      <div className="flex w-2/5">
-        <div className="w-20">
-          <img className="h-24" src={igmSrc} alt="" />
-        </div>
-        <div className="flex flex-col justify-between ml-4 flex-grow">
-          <span className="font-bold text-sm">{title}</span>
-          <Link
-            to="#"
-            className="font-bold hover:text-red-500 text-gray-500 text-sm"
-          >
-            Remove
-          </Link>
-        </div>
-      </div>
-      <div className="flex justify-center w-1/5">
-        <svg className="fill-current text-gray-600 w-3" viewBox="0 0 448 512">
-          <path d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z" />
-        </svg>
-
-        <input className="mx-2 border text-center w-8" type="text" value="1" />
-
-        <svg className="fill-current text-gray-600 w-3" viewBox="0 0 448 512">
-          <path d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z" />
-        </svg>
-      </div>
-      <span className="text-center w-1/5 font-semibold text-sm">
-        {`R$ ${priceBRL}`}
-      </span>
-      <span className="text-center w-1/5 font-semibold text-sm">
-        {`R$ ${priceBRLTotal}`}
-      </span>
-    </div>
-  );
-};
-
-const CartSummary = () => {
-  return (
-    <div id="summary" className="w-1/4 px-8 py-10">
-      <h1 className="font-semibold text-2xl border-b pb-8">Order Summary</h1>
-      <div className="flex justify-between mt-10 mb-5">
-        <span className="font-semibold text-sm uppercase">Items 3</span>
-        <span className="font-semibold text-sm">590$</span>
-      </div>
-      <div>
-        <label className="font-medium inline-block mb-3 text-sm uppercase">
-          Shipping
-        </label>
-        <select className="block p-2 text-gray-600 w-full text-sm">
-          <option>Standard shipping - $10.00</option>
-        </select>
-      </div>
-      <div className="py-10">
-        <label
-          for="promo"
-          className="font-semibold inline-block mb-3 text-sm uppercase"
-        >
-          Promo Code
-        </label>
-        <input
-          type="text"
-          id="promo"
-          placeholder="Enter your code"
-          className="p-2 text-sm w-full"
-        />
-      </div>
-      <button className="bg-red-500 hover:bg-red-600 px-5 py-2 text-sm text-white uppercase">
-        Apply
-      </button>
-      <div className="border-t mt-8">
-        <div className="flex font-semibold justify-between py-6 text-sm uppercase">
-          <span>Total cost</span>
-          <span>$600</span>
-        </div>
-        <button className="bg-indigo-500 font-semibold hover:bg-indigo-600 py-3 text-sm text-white uppercase w-full">
-          Checkout
-        </button>
-      </div>
-    </div>
-  );
-};
 
 const mapStateToProps = (state) => {
   return { cart: state.cart, products: state.products.items ?? [] };
