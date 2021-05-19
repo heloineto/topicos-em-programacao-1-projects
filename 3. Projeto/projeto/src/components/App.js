@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+
 import Header from './Header';
-import HomePage from './HomePage';
-import ContactPage from './ContactPage';
-import ProductsPage from './ProductsPage';
-import ShoppingCartPage from './ShoppingCartPage';
 import Footer from './Footer';
+
+import Home from './pages/Home';
+import Contact from './pages/Contact';
+import Products from './pages/Products';
+import ShoppingCart from './pages/ShoppingCart';
 
 export default class App extends Component {
   render() {
@@ -15,10 +17,10 @@ export default class App extends Component {
           <div>
             <Header />
             <Switch>
-              <Route path="/" exact component={HomePage} />
-              <Route path="/contato" exact component={ContactPage} />
-              <Route path="/produtos" exact component={ProductsPage} />
-              <Route path="/carrinho" exact component={ShoppingCartPage} />
+              <Route path="/" exact component={Home} />
+              <Route path="/contato" exact component={Contact} />
+              <Route path="/produtos" exact component={Products} />
+              <Route path="/carrinho" exact component={ShoppingCart} />
             </Switch>
             <Footer />
           </div>

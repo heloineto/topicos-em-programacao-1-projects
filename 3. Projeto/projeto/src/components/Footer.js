@@ -22,7 +22,16 @@ export default function Footer() {
 function FooterCol({ name, itemPrefix, nOfItems = 0 }) {
   const renderItems = () => {
     return [...Array(nOfItems).keys()].map((idx) => {
-      return <FooterItem key={idx} innerText={`${itemPrefix} ${idx + 1}`} />;
+      return (
+        <li key={idx} class="leading-7">
+          <Link
+            class="pb-1 text-white text-small border-b-2 border-gray-600 inline-block w-full"
+            to=""
+          >
+            {`${itemPrefix} ${idx + 1}`}
+          </Link>
+        </li>
+      );
     });
   };
 
@@ -37,35 +46,22 @@ function FooterCol({ name, itemPrefix, nOfItems = 0 }) {
   );
 }
 
-function FooterItem({ innerText }) {
-  return (
-    <li class="leading-7">
-      <Link
-        class="pb-1 text-white text-small border-b-2 border-gray-600 inline-block w-full"
-        to=""
-      >
-        {innerText}
-      </Link>
-    </li>
-  );
-}
-
 function BottomLinks() {
+  function BottomLink({ innerText }) {
+    return (
+      <li>
+        <Link class="text-small mr-6 font-medium" to="">
+          {innerText}
+        </Link>
+      </li>
+    );
+  }
+
   return (
     <ul class="footer-bottom bg-white text-gray-700 border-t-2 border-green-400 flex justify-end pr-10 pt-4">
       <BottomLink innerText="Blog" />
       <BottomLink innerText="Suporte" />
       <BottomLink innerText="Contatos" />
     </ul>
-  );
-}
-
-function BottomLink({ innerText }) {
-  return (
-    <li>
-      <Link class="text-small mr-6 font-medium" to="">
-        {innerText}
-      </Link>
-    </li>
   );
 }
